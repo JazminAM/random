@@ -1,0 +1,124 @@
+  body {
+    background-color: #fad7df;
+  }
+  
+  main {
+    display: flex;
+    flex-direction: column;
+  
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container-letter {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .cover {
+    position: absolute;
+    border-left: 200px solid transparent;
+    border-right: 200px solid transparent;
+    border-top: 100px solid #fe3334;
+    border-bottom: 100px solid transparent;
+    z-index: 10; /* El sobre encima inicialmente */
+    transition: transform 0.75s, opacity 0.75s;
+    transform-origin: top;
+  }
+  
+  .paper {
+    position: absolute;
+    padding: 2rem;
+    line-height: 1.8;
+    font-family: 'Georgia', serif;
+    font-size: 1rem;
+    color: #333;
+    background: #fff;
+    border: 2px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    width: 340px;
+    height: 400px;
+    text-align: left;
+    z-index: 1; /* Por debajo del sobre inicialmente */
+    opacity: 0; /* Oculto al principio */
+    transition: all 0.75s;
+  }
+  
+  .letter {
+    border-left: 200px solid #ff989e;
+    border-right: 200px solid #ff989e;
+    border-top: 100px solid transparent;
+    border-bottom: 100px solid #ff858a;
+  }
+  
+  .options {
+    display: flex;
+    gap: 2rem;
+    position: relative;
+    z-index: 5; /* Encima de la carta */
+    margin-top: 20px;
+  }
+  
+  button {
+    color: #ff3234;
+    font-weight: 600;
+    border-radius: 3px;
+    background: #fad7df;
+    padding: 0.5rem 1rem;
+    border: 1px solid #fe3334;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background: #ff989e;
+    color: white;
+  }
+  
+  .open-cover {
+    transform: rotateX(180deg);
+    opacity: 0; /* Desaparece el sobre */
+  }
+  
+  .open-paper {
+    opacity: 1; /* Muestra la carta */
+    transform: translateY(-150px); /* Posiciona la carta hacia el centro */
+  }
+  
+  .close-paper {
+    transform: translateY(0); /* Regresa la carta al sobre */
+    opacity: 0;
+  }
+  
+  
+  
+  .heart {
+    display: none;
+    position: absolute;
+    top: 25%;
+    left: 46.5%;
+    margin: auto;
+    font-size: 3rem;
+  
+    color: #fe3334;
+  
+    animation: crecer 1s forwards ;
+  }
+  
+  @keyframes crecer {
+    0% {
+      scale: 1;
+      opacity: 1;
+    }
+    100% {
+      scale: 3;
+      opacity: 0;
+  
+    }
+  }
